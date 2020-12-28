@@ -71,21 +71,21 @@ if __name__ == '__main__':
                     )
             if count == 0:
                 print("Товар не найден")
-            elif command.startswith('load '):
-                # Разбить команду на части для выделения имени файла.
-                parts = command.split(' ', maxsplit=1)
+        elif command.startswith('load '):
+# Разбить команду на части для выделения имени файла.
+            parts = command.split(' ', maxsplit=1)
 
                 # Прочитать данные из файла JSON.
-                with open(parts[1], 'r') as f:
+            with open(parts[1], 'r') as f:
                     products = json.load(f)
 
-            elif command.startswith('save '):
-                # Разбить команду на части для выделения имени файла.
-                parts = command.split(' ', maxsplit=1)
+        elif command.startswith('save '):
+# Разбить команду на части для выделения имени файла.
+            parts = command.split(' ', maxsplit=1)
 
-                # Сохранить данные в файл JSON.
-                with open(parts[1], 'w') as f:
-                    json.dump(products, f)
+ # Сохранить данные в файл JSON.
+            with open(parts[1], 'w') as f:
+                json.dump(products, f)
         elif command == 'help':
             # Вывести справку о работе с программой.
             print("Список команд:\n")
